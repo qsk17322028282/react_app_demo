@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{Component} from 'react';
+import {BrowserRouter,HashRouter, Route,Switch} from 'react-router-dom';
+import Loadable from 'react-loadable';
+import Login from './pages/Login/index.js';
+import Home from './pages/Home/index.js';
+import Wu from './pages/404/index.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          我的React项目 frist1020分支git测试
-        </a>
-      </header>
-    </div>
-  );
+// const LoadableLogin = Loadable({
+//     loader: () => import('./pages/Login/index.js'),
+//     loading: () => null,
+// })
+// const LoadableHome = Loadable({
+//     loader: () => import('./pages/home/index.js'),
+//     loading: () => null,
+// })
+// const LoadableWu = Loadable({
+//     loader: () => import('./pages/404/index.js'),
+//     loading: () => null,
+// })
+// @withRouter
+class App extends Component{
+    render(){
+        return (
+            <HashRouter>
+              <Switch>
+                <Route path='/' component={Login}></Route>
+                <Route path='/login' exact component={Login}></Route>
+                <Route path='/home' component={Home}></Route>
+                <Route path='/404' component={Wu}></Route>
+              </Switch>
+            </HashRouter>
+        )
+    }
 }
-
 export default App;

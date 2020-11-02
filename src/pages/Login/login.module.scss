@@ -1,0 +1,36 @@
+.login {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(	152, 245, 255,1),rgba(	187, 255, 255,0.5));
+  .loginHead{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    color: #000;
+    text-align: center;
+    line-height: 40px;
+    // animation: flicke 2s infinite;
+    animation: flickeLoginHeader 2s ease 1s 5 forwards;
+  }
+  @keyframes flickeLoginHeader {
+    from {
+      color: #484848;
+    }
+    to {
+      color: #ffffff;
+    }
+    
+  }
+  .loginBody{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 800px;
+    height: 400px;
+    background-color: #f00;
+  }
+}
