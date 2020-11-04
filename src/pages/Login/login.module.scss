@@ -12,8 +12,10 @@
     color: #000;
     text-align: center;
     line-height: 40px;
-    // animation: flicke 2s infinite;
-    animation: flickeLoginHeader 2s ease 1s 5 forwards;
+    animation: flickeLoginHeader 2s infinite;
+    // animation: flickeLoginHeader 2s ease 1s 5 forwards;
+    width: 100%;
+    background-color: #bfbfbf;
   }
   @keyframes flickeLoginHeader {
     from {
