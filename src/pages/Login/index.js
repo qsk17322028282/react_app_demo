@@ -1,16 +1,22 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import style from './login.module.scss'
 import LoginInput from './components/LoginInput/index.js'
 
 class Index extends Component {
-    render() {
+    render () {
         return (
-        <div className={style.login}>
-            <div className={style.loginHead}>我是login页--头部</div>
-            <div className={style.loginBody}>
+            <div className={style.login}>
+                <div className={style.loginHead}>我是login页--头部</div>
+                <div className={style.loginBody}>
                 <LoginInput />
+                    <div className={style.flickerButton} >
+                      <div className={[style.flickerButtonOne]} >Hover me</div>
+                      <div className={style.flickerButtonTwo} >Hover me</div>
+                      <div className={style.flickerButtonThree} >Hover me</div>
+                    </div>
+                 
+                </div>
             </div>
-        </div>
         )
     }
 }
