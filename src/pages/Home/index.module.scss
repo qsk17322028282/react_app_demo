@@ -1,0 +1,29 @@
+.homePage {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: relative;
+
+  div {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+
+    img {
+      // above：
+      // 指定倒影在对象的上边
+      // below：
+      // 指定倒影在对象的下边
+      // left：
+      // 指定倒影在对象的左边
+      // right：
+      // 指定倒影在对象的右边
+      // 10px是距离图片的距离
+      -webkit-box-reflect: below 10px -webkit-linear-gradient(transparent, transparent 10%, rgba(255, 255, 255, .3));
+    }
+  }
+
+}

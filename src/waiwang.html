@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- jinan-userid:7 -->
+<!-- mapbox.eventData.uuid:Z3VwZWlxaW4xOTg5:efbd7d84-1811-4365-8a0c-0ecb1744a4dd -->
+<!-- jinan-username:"交通综治处" -->
+<!-- mapbox.eventData:Z3VwZWlxaW4xOTg5:{"lastSuccess":1605926935074,"tokenU":"gupeiqin1989"} -->
+<!-- jinan-token -->
+<!-- http://172.20.89.48:7791/main/home -->
+<script>
+  var xhr = new XMLHttpRequest();
+  xhr.open("post", "http://172.20.89.48:7788/v1.0/login/account?account=交通综治处&pwd=123456");
+  // 添加http头，发送信息至服务器时内容编码类型
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function () {
+    console.log('11111', xhr.status);
+    if (xhr.responseText != "{}") {
+      // 这步为判断服务器是否正确响应
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        console.log(xhr.responseText);
+        console.log(xhr.readyState, xhr.status)
+        let responseTextData = JSON.parse(xhr.responseText)
+        window.open(`http://172.20.89.48:7791/main/home?token=${responseTextData.token}&userid=${responseTextData.id}&username=${responseTextData.nickname}`)
+      }
+    }
+  }
+  // id: 7
+  // nickname: "交通综治处"
+  // token:"eyJhbGciOiJIUzUxMiIsImlhdCI6MTYwNTkwNDMwOSwiZXhwIjoxNjA1OTExNTA5fQ.eyJpZCI6NywiYXV0aCI6IjEifQ.aofQMJKm8JSr6yhXudZyoFvYVOlY8es25jruh99_bJZ0NPvEWBtZ-zClBgLCBRnrj6qW_lUypKeUztmtOASutQ"
+  // }
+  xhr.send();
+</script>
+
+<body>
+  <!-- <form id="from_ups" action="http://172.20.89.48:7788/v1.0/login/account?account=交通综治处&pwd=123456" method="post">
+    <input type="submit" onclick="threeFn()">
+    <iframe id="admin_ups" name="admin_ups"> </iframe>
+  </form> -->
+</body>
+
+</html>

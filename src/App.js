@@ -23,7 +23,7 @@ class App extends Component{
         return (
             <HashRouter>
               <Switch>
-                <Route path='/' component={Login}></Route>
+                <Route path='/' component={Home}></Route>
                 <Route path='/login' exact component={Login}></Route>
                 <Route path='/home' component={Home}></Route>
                 <Route path='/404' component={Wu}></Route>
